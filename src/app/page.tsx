@@ -38,7 +38,7 @@ export default function Home() {
         />
       </section>
 
-      <section className="w-full flex justify-between gap-10 text-[#8E2A1B] mt-24">
+      <section id='about' className="w-full flex justify-between gap-10 text-[#8E2A1B] mt-24">
         <Image src={about} width={550} height={8} alt="Foto palha italiana" />
 
         <div className="max-w-[841px] flex flex-col text-justify justify-center gap-10">
@@ -71,7 +71,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full flex flex-col items-center justify-between gap-10 text-[#8E2A1B] mt-24">
+      <section id="menu" className="w-full flex flex-col items-center justify-between gap-10 text-[#8E2A1B] mt-24">
 
         <div className="w-full flex items-center justify-between">
           <div className="flex gap-2">
