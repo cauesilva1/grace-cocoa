@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 const Header = () => (
-  <header className="flex items-center justify-between px-6 py-4">
+  <header className="fixed top-0 left-0 w-full z-50 bg-[#FFF2D8] flex items-center justify-between px-6 py-4 rounded-b-sm">
     <div className="flex items-center gap-2">
       <Image src="/graceecocoa.png" alt="Grace & Cocoa" className="h-10" width={100} height={30} />
     </div>

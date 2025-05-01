@@ -2,8 +2,11 @@ import Image from "next/image";
 import Header from "../components/Header";
 import palha from "../../public/images/palha2.svg";
 import about from "../../public/images/about.svg";
-import iconeAbout from "../../public/images/logo-about.svg"
-
+import iconeAbout from "../../public/images/logo-about.svg";
+import maovermelha from "../../public/images/maovermelha.svg";
+import menu1 from "../../public/images/menu/menu1.png"
+import menu2 from "../../public/images/menu/menu2.png"
+import menu3 from "../../public/images/menu/menu3.png"
 
 export default function Home() {
   return (
@@ -13,14 +16,14 @@ export default function Home() {
       <section className="w-full">
         <div className="relative text-right -z-10">
           <h1
-            className="text-[23.5rem] text-center text-[#8E2A1B] tracking-wider"
+            className="text-[20.2rem] text-center text-[#8E2A1B] tracking-wider"
             style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}
           >
             PALHA
           </h1>
 
           <h3
-            className=" px-6 absolute right-[.9%] bottom-[26%] bg-[#FFF2D8] text-[5.7rem] text-[#8E2A1B] leading-none  rounded-sm"
+            className=" px-6 absolute right-[-1%] bottom-[26%] bg-[#FFF2D8] text-[5.7rem] text-[#8E2A1B] leading-none  rounded-sm"
             style={{ fontFamily: "var(--font-cinzel) ", fontWeight: 400 }}
           >
             italiana
@@ -35,15 +38,18 @@ export default function Home() {
         />
       </section>
 
-      <section className="w-full flex justify-between gap-10 text-[#8E2A1B] mt-28">
+      <section className="w-full flex justify-between gap-10 text-[#8E2A1B] mt-24">
         <Image src={about} width={550} height={8} alt="Foto palha italiana" />
 
-        <div className="max-w-[841px] flex flex-col text-justify justify-center gap-14">
-          <div className="flex justify-center">
-            <h3 className="text-[#8E2A1B] text-[90px]"
-             style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}>ABOUT US</h3>
-            <Image src={iconeAbout} width={100} height={4} alt="Icone mascote" />
-
+        <div className="max-w-[841px] flex flex-col text-justify justify-center gap-10">
+          <div className="flex justify-center gap-4">
+            <h3
+              className="text-[#8E2A1B] text-[70px]"
+              style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}
+            >
+              ABOUT US
+            </h3>
+            <Image src={iconeAbout} width={90} height={4} alt="Icone mascote" />
           </div>
 
           <div className="flex flex-col gap-8 ">
@@ -52,9 +58,10 @@ export default function Home() {
               unforgettable — and we do it with Palha Italiana!
             </p>
             <p className="font-medium text-[25px]">
-              Handmade with love, our <strong className="font-bold">Brazilian</strong> sweets mix tradition, creativity,
-              and top-quality ingredients to deliver that perfect bite of
-              happiness.
+              Handmade with love, our{" "}
+              <strong className="font-bold">Brazilian</strong> sweets mix
+              tradition, creativity, and top-quality ingredients to deliver that
+              perfect bite of happiness.
             </p>
             <p className="font-medium text-[25px]">
               Whether it’s a treat for yourself or a gift for someone special,
@@ -62,6 +69,52 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="w-full flex flex-col items-center justify-between gap-10 text-[#8E2A1B] mt-24">
+
+        <div className="w-full flex items-center justify-between">
+          <div className="flex gap-2">
+
+          <h3 className="font-medium text-[40px] border-b-4 border-b-[#8E2A1B]">Menu</h3>
+          <Image
+            src={maovermelha}
+            width={70}
+            height={6}
+            alt="Palha Italiana"
+            />
+            </div>
+
+        <button className="w-[8rem] h-[3rem] bg-[#521B11] text-white px-4 py-2 text-sm uppercase tracking-wide cursor-pointer rounded-sm" style={{ fontFamily: 'Bemirs, sans-serif' }}>
+          Buy Now
+        </button>
+        </div>
+
+        <div className="w-full flex flex-col gap-2">
+          <div className="flex gap-4">
+            
+        <Image
+            src={menu1}
+            width={550}
+            height={8}
+            alt="Palha Italiana"
+            />
+          <Image
+            src={menu2}
+            width={550}
+            height={8}
+            alt="Palha Italiana"
+            />
+          <Image
+            src={menu3}
+            width={550}
+            height={8}
+            alt="Palha Italiana"
+            />
+            </div>
+        <p className="text-[0.98rem]">The combination of Brigadeiro (the real Brazilian cholocate fudge) combined with tea biscuits that gives the crispy sensation, covered by icing sugar, a holy bite!</p>
+        </div>
+
       </section>
     </div>
   );
