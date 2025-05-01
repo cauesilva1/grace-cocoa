@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} antialiased flex flex-col items-center`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} antialiased flex flex-col items-center overflow-x-hidden`}
       >
         {children}
       </body>
