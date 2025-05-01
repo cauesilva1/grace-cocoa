@@ -13,19 +13,19 @@ export default function Home() {
   return (
     <>
     <Header />
-    <div className="max-w-[90%] pb-28 flex flex-col ">
+    <main className="max-w-[80%] pb-28 flex flex-col">
 
-      <section className="w-full">
+      <section className="w-full h-[1050px] mt-24 flex flex-col justify-between">
         <div className="relative text-right -z-10">
           <h1
-            className="text-[20.2rem] text-center text-[#8E2A1B] tracking-wider"
+            className="text-[25rem] text-center text-[#8E2A1B] tracking-widest leading-none"
             style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}
           >
             PALHA
           </h1>
 
           <h3
-            className=" px-6 absolute right-[-1%] bottom-[26%] bg-[#FFF2D8] text-[5.7rem] text-[#8E2A1B] leading-none  rounded-sm"
+            className=" px-10 absolute right-[.9%] bottom-[16%] bg-[#FFF2D8] text-[5.7rem] text-[#8E2A1B] leading-none  rounded-sm"
             style={{ fontFamily: "var(--font-cinzel) ", fontWeight: 400 }}
           >
             italiana
@@ -33,10 +33,10 @@ export default function Home() {
         </div>
         <Image
           src={palha}
-          width={1450}
+          width={0}
           height={12}
           alt="Palha Italiana"
-          className="z-10 -mt-[15rem]" />
+          className="z-10 -mt-[15rem] w-full" />
       </section>
 
       <section id='about' className="w-full flex justify-between gap-10 text-[#8E2A1B] mt-24">
@@ -55,7 +55,7 @@ export default function Home() {
 
           <div className="flex flex-col gap-8 ">
             <p className="font-medium text-[25px]">
-              We're passionate about turning simple moments into something
+              Were passionate about turning simple moments into something
               unforgettable — and we do it with Palha Italiana!
             </p>
             <p className="font-medium text-[25px]">
@@ -65,8 +65,8 @@ export default function Home() {
               perfect bite of happiness.
             </p>
             <p className="font-medium text-[25px]">
-              Whether it's a treat for yourself or a gift for someone special,
-              we're here to make life a little sweeter, one piece at a time.
+              Whether its a treat for yourself or a gift for someone special,
+              were here to make life a little sweeter, one piece at a time.
             </p>
           </div>
         </div>
@@ -121,9 +121,8 @@ export default function Home() {
       </section>
 
 
-    </div>
+    </main>
     <Footer />
-    
     </>
   );
 }
