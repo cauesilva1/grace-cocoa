@@ -1,9 +1,10 @@
+import Image from "next/image";
 import React from "react";
 
 const Header = () => (
-  <header className="flex items-center justify-between px-6 py-4 border-red-500 border">
+  <header className="flex items-center justify-between px-6 py-4">
     <div className="flex items-center gap-2">
-      <img src="/graceecocoa.png" alt="Grace & Cocoa" className="h-10" />
+      <Image src="/graceecocoa.png" alt="Grace & Cocoa" className="h-10" width={100} height={30} />
     </div>
     <nav className="hidden md:flex gap-6 uppercase text-sm tracking-widest">
       <a className="text-[#8E2A1B]" href="#about">About Us</a>
