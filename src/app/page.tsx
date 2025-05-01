@@ -7,11 +7,13 @@ import maovermelha from "../../public/images/maovermelha.svg";
 import menu1 from "../../public/images/menu/menu1.png"
 import menu2 from "../../public/images/menu/menu2.png"
 import menu3 from "../../public/images/menu/menu3.png"
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
+    <>
+    <Header />
     <div className="max-w-[90%] pb-28 flex flex-col ">
-      <Header />
 
       <section className="w-full">
         <div className="relative text-right -z-10">
@@ -34,8 +36,7 @@ export default function Home() {
           width={1450}
           height={12}
           alt="Palha Italiana"
-          className="z-10 -mt-[15rem]"
-        />
+          className="z-10 -mt-[15rem]" />
       </section>
 
       <section id='about' className="w-full flex justify-between gap-10 text-[#8E2A1B] mt-24">
@@ -76,46 +77,47 @@ export default function Home() {
         <div className="w-full flex items-center justify-between">
           <div className="flex gap-2">
 
-          <h3 className="font-medium text-[40px] border-b-4 border-b-[#8E2A1B]">Menu</h3>
-          <Image
-            src={maovermelha}
-            width={70}
-            height={6}
-            alt="Palha Italiana"
-            />
-            </div>
+            <h3 className="font-medium text-[40px] border-b-4 border-b-[#8E2A1B]">Menu</h3>
+            <Image
+              src={maovermelha}
+              width={70}
+              height={6}
+              alt="Palha Italiana" />
+          </div>
 
-        <button className="w-[8rem] h-[3rem] bg-[#521B11] text-white px-4 py-2 text-sm uppercase tracking-wide cursor-pointer rounded-sm" style={{ fontFamily: 'Bemirs, sans-serif' }}>
-          Buy Now
-        </button>
+          <button className="w-[8rem] h-[3rem] bg-[#521B11] text-white px-4 py-2 text-sm uppercase tracking-wide cursor-pointer rounded-sm" style={{ fontFamily: 'Bemirs, sans-serif' }}>
+            Buy Now
+          </button>
         </div>
 
         <div className="w-full flex flex-col gap-2">
           <div className="flex gap-4">
-            
-        <Image
-            src={menu1}
-            width={550}
-            height={8}
-            alt="Palha Italiana"
-            />
-          <Image
-            src={menu2}
-            width={550}
-            height={8}
-            alt="Palha Italiana"
-            />
-          <Image
-            src={menu3}
-            width={550}
-            height={8}
-            alt="Palha Italiana"
-            />
-            </div>
-        <p className="text-[0.98rem]">The combination of Brigadeiro (the real Brazilian cholocate fudge) combined with tea biscuits that gives the crispy sensation, covered by icing sugar, a holy bite!</p>
+
+            <Image
+              src={menu1}
+              width={550}
+              height={8}
+              alt="Palha Italiana" />
+            <Image
+              src={menu2}
+              width={550}
+              height={8}
+              alt="Palha Italiana" />
+            <Image
+              src={menu3}
+              width={550}
+              height={8}
+              alt="Palha Italiana" />
+          </div>
+          <p className="text-[0.98rem]">The combination of Brigadeiro (the real Brazilian cholocate fudge) combined with tea biscuits that gives the crispy sensation, covered by icing sugar, a holy bite!</p>
         </div>
 
       </section>
+
+
     </div>
+    <Footer />
+    
+    </>
   );
 }
