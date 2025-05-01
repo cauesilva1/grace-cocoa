@@ -1,0 +1,18 @@
+import React from "react";
+
+const Header = () => (
+  <header className="flex items-center justify-between px-6 py-4 border-red-500 border">
+    <div className="flex items-center gap-2">
+      <img src="/graceecocoa.png" alt="Grace & Cocoa" className="h-10" />
+    </div>
+    <nav className="hidden md:flex gap-6 uppercase text-sm tracking-widest">
+      <a className="text-[#8E2A1B]" href="#about">About Us</a>
+      <a className="text-[#8E2A1B]" href="#menu">Menu</a>
+    </nav>
+    <button className="bg-[#521B11] text-white px-4 py-2 text-sm uppercase tracking-wide cursor-pointer rounded-sm" style={{ fontFamily: 'Bemirs, sans-serif' }}>
+      Buy Now
+    </button>
+  </header>
+);
+
+export default Header;
