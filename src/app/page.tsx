@@ -9,6 +9,8 @@ import menu1 from "../../public/images/menu/menu1.png";
 import menu2 from "../../public/images/menu/menu2.png";
 import menu3 from "../../public/images/menu/menu3.png";
 import Footer from "@/components/Footer";
+import ImageCarousel from "@/components/imagecarrosel";
+
 
 export default function Home() {
   return (
@@ -36,7 +38,7 @@ export default function Home() {
             width={1450}
             height={12}
             alt="Palha Italiana"
-            className="z-10 -mt-[13rem]"
+            className="z-10 -mt-[12rem]"
           />
         </section>
 
@@ -140,19 +142,20 @@ export default function Home() {
 
         <section className="w-full flex flex-col lg:flex-row bg-[#FFF2D8] mt-14">
           {/* Coluna Esquerda */}
-          <div className="flex flex-col justify-between items-start lg:w-1/2">
+          <div className=" bg-[#8E2A1B] flex flex-col justify-between items-center lg:w-[25rem] py-6 ">
+
             <div>
               <div className="flex flex-row items-start gap-2">
-                <span className="text-[#8E2A1B] font-bold text-[12vw] leading-none tracking-tight">
+                <span className="text-[#FFF2D8] font-bold text-[12vw] leading-none tracking-tight">
                   SOC
                 </span>
               </div>
               <div className="flex flex-row items-start gap-2">
-                <span className="text-[#8E2A1B] font-bold text-[15vw] leading-none tracking-tight">
+                <span className="text-[#FFF2D8] font-bold text-[15vw] leading-none tracking-tight">
                   IAL
                 </span>
                 <span
-                  className="text-[#8E2A1B] font-bold text-4xl ml-2 mt-4 tracking-widest"
+                  className="text-[#FFF2D8] font-bold text-4xl ml-2 mt-4 tracking-widest"
                   style={{
                     writingMode: "vertical-rl",
                     textOrientation: "mixed",
@@ -161,27 +164,24 @@ export default function Home() {
                   MEDIA
                 </span>
               </div>
+
             </div>
-            {/* Quadrado com follow us */}
-            <div className="mt-8 bg-[#8E2A1B] w-[320px] h-[220px] flex flex-col justify-end p-6">
-              <span className="text-[#FFF2D8] text-base tracking-widest flex items-center gap-2">
-                follow us
-                <span className="ml-2 w-8 h-px bg-[#FFF2D8] inline-block"></span>
-                <span className="text-2xl">→</span>
-              </span>
-            </div>
+
+            <a
+              href="https://instagram.com/grace.cocoa"
+              className="w-[8rem] h-[3rem] bg-[#FFF2D8] text-[#8E2A1B] px-4 py-2 text-md uppercase tracking-wide cursor-pointer rounded-sm flex justify-center items-center"
+              style={{ fontFamily: "Bemirs, sans-serif" }}
+            >
+              follow us
+            </a>
+
           </div>
+
           {/* Coluna Direita */}
-          <div className="hidden lg:flex flex-1 items-center justify-end ">
-            {/* Substitua pelo seu SVG ou imagem */}
-            <Image
-              src={socialmedia}
-              alt="Heart Cocoa"
-              width={450}
-              height={10}
-              className="object-contain"
-            />
+          <div className="flex flex-1 items-center ">
+          <ImageCarousel />
           </div>
+
         </section>
       </div>
       <Footer />
