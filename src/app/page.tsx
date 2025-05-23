@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Header from "../components/Header";
-import palha from "../../public/images/palha2.svg";
-import about from "../../public/images/about.svg";
+import palha from "../../public/images/palha3.svg";
+import about from "../../public/images/about2.svg";
 import iconeAbout from "../../public/images/logo-about.svg";
 import maovermelha from "../../public/images/maovermelha.svg";
+import menu1 from "../../public/images/menu.svg";
+import menu2 from "../../public/images/menu2.svg";
+import menu3 from "../../public/images/menu3.svg";
 import socialmedia from "../../public/images/socialmedia.svg";
-import menu1 from "../../public/images/menu/menu1.png";
-import menu2 from "../../public/images/menu/menu2.png";
-import menu3 from "../../public/images/menu/menu3.png";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -18,14 +18,14 @@ export default function Home() {
         <section className="w-full h-[1050px] mt-24 flex flex-col justify-between">
           <div className="relative text-right -z-10">
             <h1
-              className="text-[25rem] text-center text-[#8E2A1B] tracking-widest leading-none"
+              className="text-[25rem] text-center text-[#8E2A1B] tracking-[2.8rem] leading-none"
               style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}
             >
               PALHA
             </h1>
 
             <h3
-              className=" px-10 absolute right-[.9%] bottom-[16%] bg-[#FFF2D8] text-[5.7rem] text-[#8E2A1B] leading-none  rounded-sm"
+              className=" px-10 absolute right-[.1%] bottom-[16%] bg-[#FFF2D8] text-[5.7rem] text-[#8E2A1B] leading-none  rounded-sm"
               style={{ fontFamily: "var(--font-cinzel) ", fontWeight: 400 }}
             >
               italiana
@@ -140,37 +140,30 @@ export default function Home() {
 
         <section className="w-full flex flex-col lg:flex-row bg-[#FFF2D8] mt-14">
           {/* Coluna Esquerda */}
-          <div className="flex flex-col justify-between items-start lg:w-1/2">
-            <div>
-              <div className="flex flex-row items-start gap-2">
-                <span className="text-[#8E2A1B] font-bold text-[12vw] leading-none tracking-tight">
-                  SOC
-                </span>
-              </div>
-              <div className="flex flex-row items-start gap-2">
-                <span className="text-[#8E2A1B] font-bold text-[15vw] leading-none tracking-tight">
-                  IAL
-                </span>
-                <span
-                  className="text-[#8E2A1B] font-bold text-4xl ml-2 mt-4 tracking-widest"
-                  style={{
-                    writingMode: "vertical-rl",
-                    textOrientation: "mixed",
-                  }}
-                >
-                  MEDIA
-                </span>
-              </div>
-            </div>
-            {/* Quadrado com follow us */}
-            <div className="mt-8 bg-[#8E2A1B] w-[320px] h-[220px] flex flex-col justify-end p-6">
-              <span className="text-[#FFF2D8] text-base tracking-widest flex items-center gap-2">
-                follow us
-                <span className="ml-2 w-8 h-px bg-[#FFF2D8] inline-block"></span>
-                <span className="text-2xl">→</span>
+          <div className="flex flex-col justify-between items-center px-8 bg-[#8E2A1B] border">
+            <span className="text-[#FFF2D8] font-bold text-[13rem] leading-none tracking-tight">
+              SOC
+            </span>
+            <div className="w-full flex items-center justify-between border border-white">
+              <span className="text-[#FFF2D8] font-bold text-[13rem] leading-none tracking-tight">
+                IAL
+              </span>
+              <span
+                className="text-[#FFF2D8] font-bold text-[3.1rem] tracking-widest"
+                style={{
+                  writingMode: "vertical-rl",
+                  textOrientation: "mixed",
+                }}
+              >
+                MEDIA
               </span>
             </div>
+
+            <button className="flex items-center gap-2 text-[#8E2A1B] text-[2.5rem] tracking-widest bg-[#FFF2D8] px-4 py-2 rounded-sm">
+              FOLLOW US
+            </button>
           </div>
+
           {/* Coluna Direita */}
           <div className="hidden lg:flex flex-1 items-center justify-end ">
             {/* Substitua pelo seu SVG ou imagem */}
@@ -183,7 +176,6 @@ export default function Home() {
             />
           </div>
         </section>
-
       </main>
       <Footer />
     </>
