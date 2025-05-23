@@ -3,7 +3,7 @@ import React from "react";
 import footerimage from "../../public/images/footerimage.svg"
 
 const Footer = () => (
-  <footer className="w-full bg-[#8E2A1B] text-[#FFF2D8] pt-10 pb-6 px-14 sm:px-24 mt-20">
+  <footer className="w-full bg-[#8E2A1B] text-[#FFF2D8] pt-10 pb-6 px-14 sm:px-24 mt-10">
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
       {/* Logo grande e nome */}
       <div className="flex flex-col items-center md:items-start gap-4 w-full md:w-auto">
