@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Header from "../components/Header";
-import palha from "../../public/images/palha2.svg";
-import about from "../../public/images/about.svg";
+import palha from "../../public/images/palha3.svg";
+import about from "../../public/images/about2.svg";
 import iconeAbout from "../../public/images/logo-about.svg";
 import maovermelha from "../../public/images/maovermelha.svg";
-import menu1 from "../../public/images/menu/menu1.png"
-import menu2 from "../../public/images/menu/menu2.png"
-import menu3 from "../../public/images/menu/menu3.png"
+import menu1 from "../../public/images/menu.svg"
+import menu2 from "../../public/images/menu2.svg"
+import menu3 from "../../public/images/menu3.svg"
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -18,14 +18,14 @@ export default function Home() {
       <section className="w-full h-[1050px] mt-24 flex flex-col justify-between">
         <div className="relative text-right -z-10">
           <h1
-            className="text-[25rem] text-center text-[#8E2A1B] tracking-widest leading-none"
+            className="text-[25rem] text-center text-[#8E2A1B] tracking-[2.8rem] leading-none"
             style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}
           >
             PALHA
           </h1>
 
           <h3
-            className=" px-10 absolute right-[.9%] bottom-[16%] bg-[#FFF2D8] text-[5.7rem] text-[#8E2A1B] leading-none  rounded-sm"
+            className=" px-10 absolute right-[.1%] bottom-[16%] bg-[#FFF2D8] text-[5.7rem] text-[#8E2A1B] leading-none  rounded-sm"
             style={{ fontFamily: "var(--font-cinzel) ", fontWeight: 400 }}
           >
             italiana
@@ -91,7 +91,7 @@ export default function Home() {
         </div>
 
         <div className="w-full flex flex-col gap-2">
-          <div className="flex gap-4">
+          <div className="flex gap-4 cursor-pointer">
 
             <Image
               src={menu1}
