@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, useEffect } from "react";
+
 import Image from "next/image";
 import Header from "../components/Header";
 import palha from "../../public/images/palha3.svg";
@@ -7,25 +11,56 @@ import maovermelha from "../../public/images/maovermelha.svg";
 import menu1 from "../../public/images/menu.svg";
 import menu2 from "../../public/images/menu2.svg";
 import menu3 from "../../public/images/menu3.svg";
-import socialmedia from "../../public/images/socialmedia.svg";
+import social from "../../public/images/social.svg";
+import social2 from "../../public/images/social2.svg";
+import social3 from "../../public/images/social3.svg";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Definindo as imagens com suas propriedades
+  const slides = [
+    { src: social, alt: "Social Media 1" },
+    { src: social2, alt: "Social Media 2" },
+    { src: social3, alt: "Social Media 3" },
+  ];
+
+  // Efeito para trocar as imagens automaticamente
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev ? 2 : 0));
+    }, 3000);
+
+    // Limpa o intervalo quando o componente é desmontado
+    return () => clearInterval(interval);
+  }, []);
+
+  const handlePrevSlide = () => {
+    console.log(slides.length, "anterior");
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const handleNextSlide = () => {
+    console.log(slides.length, "proximo");
+    setCurrentSlide((prev) => (prev >= slides.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <>
       <Header />
       <main className="max-w-[80%] pb-28 flex flex-col">
         <section className="w-full h-[1050px] mt-24 flex flex-col justify-between">
-          <div className="relative text-right -z-10">
+          <div className="w-full text-right relative bg-amber-400 z-20000">
             <h1
-              className="text-[25rem] text-center text-[#8E2A1B] tracking-[2.8rem] leading-none"
+              className="text-4xl lg:text-[25rem] text-center text-[#8E2A1B] tracking-[2.8rem] leading-none"
               style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}
             >
               PALHA
             </h1>
 
             <h3
-              className=" px-10 absolute right-[.1%] bottom-[16%] bg-[#FFF2D8] text-[5.7rem] text-[#8E2A1B] leading-none  rounded-sm"
+              className=" px-10 absolute right-[-.5%] bottom-[16%] bg-[#FFF2D8] lg:text-[5.7rem] text-[#8E2A1B] leading-none  rounded-sm"
               style={{ fontFamily: "var(--font-cinzel) ", fontWeight: 400 }}
             >
               italiana
@@ -106,7 +141,7 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="w-full flex flex-col gap-2">
+          <div className="w-full flex flex-col gap-10 transition-all ease-in">
             <div className="flex gap-4">
               <Image
                 src={menu1}
@@ -140,12 +175,12 @@ export default function Home() {
 
         <section className="w-full flex flex-col lg:flex-row bg-[#FFF2D8] mt-14">
           {/* Coluna Esquerda */}
-          <div className="flex flex-col justify-between items-center px-8 bg-[#8E2A1B] border">
-            <span className="text-[#FFF2D8] font-bold text-[13rem] leading-none tracking-tight">
+          <div className="flex flex-col justify-between items-center px-8 bg-[#8E2A1B]">
+            <span className="text-[#FFF2D8] font-bold text-[13rem] leading-none tracking-wider">
               SOC
             </span>
-            <div className="w-full flex items-center justify-between border border-white">
-              <span className="text-[#FFF2D8] font-bold text-[13rem] leading-none tracking-tight">
+            <div className="w-full flex items-center justify-center ">
+              <span className="text-[#FFF2D8] font-bold text-[13rem] leading-none tracking-wider">
                 IAL
               </span>
               <span
@@ -159,21 +194,60 @@ export default function Home() {
               </span>
             </div>
 
-            <button className="flex items-center gap-2 text-[#8E2A1B] text-[2.5rem] tracking-widest bg-[#FFF2D8] px-4 py-2 rounded-sm">
+            <button
+              className="px-4 py-2 mb-8 flex items-center gap-2 text-[#8E2A1B] font-medium text-[2.5rem] tracking-widest bg-[#FFF2D8] 
+            rounded-sm cursor-pointer border border-[#8E2A1B] hover:bg-[#8E2A1B] hover:text-[#FFF2D8] hover:border hover:border-[#FFF2D8] transition-all ease-in"
+            >
               FOLLOW US
             </button>
           </div>
 
           {/* Coluna Direita */}
-          <div className="hidden lg:flex flex-1 items-center justify-end ">
-            {/* Substitua pelo seu SVG ou imagem */}
-            <Image
-              src={socialmedia}
-              alt="Heart Cocoa"
-              width={450}
-              height={10}
-              className="object-contain"
-            />
+          <div className="hidden lg:flex flex-1 items-center justify-end relative overflow-hidden">
+            <div className="flex transition-transform duration-500 ease-in-out w-full">
+              {slides.map((slide, index) => (
+                <div
+                  key={index}
+                  className="w-full flex-shrink-0 transition-transform duration-500"
+                  style={{
+                    transform: `translateX(${(index - currentSlide) * 100}%)`,
+                    width: "100%",
+                    position: "relative",
+                  }}
+                >
+                  <Image
+                    src={slide.src}
+                    alt={slide.alt}
+                    width={500}
+                    height={300}
+                    className="w-full h-auto object-contain"
+                    priority={index === 0}
+                    onError={(e) => {
+                      console.error(`Erro ao carregar imagem ${index + 1}:`, e);
+                    }}
+                    style={{
+                      display: "block",
+                      maxWidth: "100%",
+                      height: "auto",
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+
+            <button
+              onClick={handlePrevSlide}
+              className="absolute left-0 bg-[#8E2A1B] text-[#FFF2D8] p-2 rounded-full hover:bg-[#521B11] transition-colors z-10"
+            >
+              ←
+            </button>
+
+            <button
+              onClick={handleNextSlide}
+              className="absolute right-0 bg-[#8E2A1B] text-[#FFF2D8] p-2 rounded-full hover:bg-[#521B11] transition-colors z-10"
+            >
+              →
+            </button>
           </div>
         </section>
       </main>
