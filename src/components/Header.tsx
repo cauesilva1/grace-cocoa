@@ -11,21 +11,21 @@ const Header = () => {
 
   return (
     <header className="w-full fixed top-0 left-0 z-10000 bg-[#FFF2D8] flex items-center justify-between px-8 py-4 rounded-b-sm shadow-sm">
-      <Image src={logo} alt="Grace & Cocoa" width={0} height={0} className="w-[10rem] lg:w-[18vw]"/>
+      <Image src={logo} alt="Grace & Cocoa" width={0} height={0} className="w-[10rem] lg:w-[11vw]"/>
       
       {/* Menu para desktop */}
       <nav className="hidden md:w-[30%] md:flex md:justify-between  items-center gap-8 uppercase">
-        <a className="text-[#8E2A1B] font-bold text-[1.6rem] lg:text-[2.5vw]" href="#about">
+        <a className="text-[#8E2A1B] font-bold text-[1.6rem] lg:text-[2vw]" href="#about">
           About Us
         </a>
-        <a className="text-[#8E2A1B] font-bold text-[1.6rem]  lg:text-[2.5vw] " href="#menu">
+        <a className="text-[#8E2A1B] font-bold text-[1.6rem]  lg:text-[2vw] " href="#menu">
           Menu
         </a>
       </nav>
 
       {/* Botão de compra */}
       <button
-        className="hidden md:block px-4 py-2 bg-[#521B11] text-white font-bold  lg:text-[2.5vw] border border-[#FFF2D8] uppercase tracking-widest cursor-pointer rounded-sm
+        className="hidden md:block px-4 py-2 bg-[#521B11] text-white font-bold  lg:text-[2vw] border border-[#FFF2D8] uppercase tracking-widest cursor-pointer rounded-sm
         hover:border hover:border-[#521B11] hover:text-[#521B11] hover:bg-[#FFF2D8] transition-colors duration-300 ease-in"
         style={{ fontFamily: "Gilroy, sans-serif" }}
       >
