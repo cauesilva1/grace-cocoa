@@ -41,19 +41,19 @@ export default function MobilePage() {
     <>
       <Header />
       <main className="max-w-[90%] lg:max-w-[80%] mb-6 lg:pb-28 flex flex-col">
-        <section className="w-full lg:h-[1050px] mt-36 flex flex-col items-center">
+        <section className="w-full lg:h-[1050px] mt-36 lg:mt-[13vw] flex flex-col items-center">
           <div className="w-full relative">
             <h1
-              className="text-[7rem] lg:text-[25rem] text-center text-[#8E2A1B] lg:tracking-[2.8rem] leading-none"
+              className="text-[26vw] md:text-[25vw] lg:text-[18.45vw] text-center text-[#8E2A1B] lg:tracking-[2.8rem] leading-none"
               style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}
             >
               PALHA
             </h1>
 
             <h3
-              className="px-1.5 lg:px-10 absolute right-0 bottom-[13px] bg-[#FFF2D8] font-semibold text-[1.625rem] 
-              lg:text-[5.7rem] text-[#8E2A1B] leading-none"
-              style={{ fontFamily: "var(--font-cinzel) ", fontWeight: 400 }}
+              className="absolute right-[1%] md:right-[1.3%] lg:right-[.3%] bottom-[16%] md:bottom-[15%] bg-[#FFF2D8] font-semibold text-center text-[6vw] 
+              md:text-[3rem] lg:text-[4vw] text-[#8E2A1B] leading-none md:px-3 lg:px-[3rem] max-w-[34%] w-[34%] lg:max-w-[40%] lg:w-[34%]"
+              style={{ fontFamily: "var(--font-cinzel)", fontWeight: 400 }}
             >
               italiana
             </h3>
@@ -63,7 +63,7 @@ export default function MobilePage() {
             width={0}
             height={12}
             alt="Palha Italiana"
-            className="w-full -mt-8 z-50"
+            className="w-full -mt-[6vw] z-50 md:-mt-[6vh] lg:-mt-[5vw]"
           />
         </section>
 
