@@ -15,6 +15,8 @@ import social from "../../public/images/social.svg";
 import social2 from "../../public/images/social2.svg";
 import social3 from "../../public/images/social3.svg";
 import Footer from "@/components/Footer";
+import ImageCarousel from "@/components/imagecarrosel";
+
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -249,6 +251,7 @@ export default function Home() {
               →
             </button>
           </div>
+
         </section>
       </main>
       <Footer />
