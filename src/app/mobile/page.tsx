@@ -195,13 +195,13 @@ export default function MobilePage() {
               </div>
 
               <button
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-[#521B11] text-white w-10 h-10 rounded-full flex items-center justify-center z-10"
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-[#521B11] text-white w-10 h-10 rounded-full flex items-center justify-center z-10 cursor-pointer"
                 onClick={scrollMenuPrev}
               >
                 ←
               </button>
               <button
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#521B11] text-white w-10 h-10 rounded-full flex items-center justify-center z-10"
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#521B11] text-white w-10 h-10 rounded-full flex items-center justify-center z-10 cursor-pointer"
                 onClick={scrollMenuNext}
               >
                 →
@@ -214,7 +214,7 @@ export default function MobilePage() {
             </p>
 
             <button
-              className="lg:hidden w-[45%] mx-auto lg:w-[8rem] lg:h-[3rem] bg-[#8E2A1B] text-white py-2 text-2xl font-bold uppercase tracking-wide cursor-pointer 
+              className="lg:hidden w-[45%] max-w-[25%] mx-auto lg:w-[8rem] lg:h-[3rem] bg-[#8E2A1B] text-white py-2 text-2xl font-bold uppercase tracking-wide cursor-pointer 
               rounded-sm"
               style={{ fontFamily: "Bemirs, sans-serif" }}
             >
@@ -223,7 +223,8 @@ export default function MobilePage() {
           </div>
         </section>
 
-        <section className="w-full mt-24 flex flex-col gap-8">
+        {/* carrosel social media mobile */}
+        <section className="w-full mt-24 flex flex-col gap-8 lg:hidden">
           <div className="relative">
             <span
               className="w-full py-7 block bg-[#8E2A1B] text-center text-5xl text-[#FFF2D8]
@@ -276,14 +277,97 @@ export default function MobilePage() {
               →
             </button>
           </div>
-
-          <button
-            className="w-[45%] mx-auto lg:w-[8rem] lg:h-[3rem] bg-[#8E2A1B] text-white py-2 text-2xl font-bold uppercase tracking-wide cursor-pointer 
+          <a
+            className="w-[45%] max-w-[25%] mx-auto lg:w-[8rem] lg:h-[3rem] bg-[#8E2A1B] text-white text-center py-2 text-2xl font-bold uppercase tracking-widest cursor-pointer 
               rounded-sm"
             style={{ fontFamily: "Bemirs, sans-serif" }}
+            href="https://www.instagram.com/grace.cocoa/" target="_blank"
           >
             follow us
-          </button>
+          </a>
+        </section>
+
+        {/* carrosel social media desktop */}
+        <section className="w-full lg:flex flex-col lg:flex-row bg-[#FFF2D8] mt-14 hidden">
+          {/* Coluna Esquerda */}
+          <div className="flex flex-col justify-center gap-2 items-center px-8 bg-[#8E2A1B]">
+            <span className="text-[#FFF2D8] font-bold text-[8vw] leading-none tracking-wider">
+              SOC
+            </span>
+            <div className="w-full flex items-center justify-center ">
+              <span className="text-[#FFF2D8] font-bold text-[8vw] leading-none tracking-wider">
+                IAL
+              </span>
+              <span
+                className="text-[#FFF2D8] font-bold text-[2vw] tracking-widest"
+                style={{
+                  writingMode: "vertical-rl",
+                  textOrientation: "mixed",
+                }}
+              >
+                MEDIA
+              </span>
+            </div>
+
+            <a
+              className="px-4 py-2 flex items-center gap-2 text-[#8E2A1B] font-medium text-[2vw] tracking-widest bg-[#FFF2D8] 
+            rounded-sm cursor-pointer border border-[#8E2A1B] hover:bg-[#8E2A1B] hover:text-[#FFF2D8] hover:border hover:border-[#FFF2D8] transition-all ease-in"
+              href="https://www.instagram.com/grace.cocoa/"
+              target="_blank"
+            >
+              FOLLOW US
+            </a>
+          </div>
+
+          {/* Coluna Direita */}
+          <div className="hidden lg:flex flex-1 items-center justify-end relative overflow-hidden ">
+            <div className="flex transition-transform duration-500 ease-in-out w-full">
+              <div className="overflow-hidden" ref={socialEmblaRef}>
+                <div className="flex">
+                  <div className="flex-[0_0_100%] min-w-0">
+                    <Image
+                      src={social}
+                      width={550}
+                      height={8}
+                      alt="Palha Italiana"
+                      className="w-full h-auto transition-transform duration-200 hover:scale-110 rounded-sm"
+                    />
+                  </div>
+                  <div className="flex-[0_0_100%] min-w-0">
+                    <Image
+                      src={social2}
+                      width={550}
+                      height={8}
+                      alt="Palha Italiana"
+                      className="w-full h-auto transition-transform duration-200 hover:scale-110 rounded-sm"
+                    />
+                  </div>
+                  <div className="flex-[0_0_100%] min-w-0">
+                    <Image
+                      src={social3}
+                      width={550}
+                      height={8}
+                      alt="Palha Italiana"
+                      className="w-full h-auto transition-transform duration-200 hover:scale-110 rounded-sm"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-[#521B11] text-white w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
+              onClick={scrollSocialPrev}
+            >
+              ←
+            </button>
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#521B11] text-white w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
+              onClick={scrollSocialNext}
+            >
+              →
+            </button>
+          </div>
         </section>
       </main>
       <Footer />
