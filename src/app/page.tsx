@@ -1,8 +1,5 @@
 "use client";
-import { useCallback } from "react";
-
 import Header from "@/components/Header";
-
 import Image from "next/image";
 import palha from "../../public/images/palha2.svg";
 import iconeAbout from "../../public/images/logo-about.svg";
@@ -11,32 +8,14 @@ import about from "../../public/images/about2.svg";
 import menu1 from "../../public/images/menu.svg";
 import menu2 from "../../public/images/menu2.svg";
 import menu3 from "../../public/images/menu3.svg";
-import useEmblaCarousel from "embla-carousel-react";
 import social from "../../public/images/social.svg";
 import social2 from "../../public/images/social2.svg";
 import social3 from "../../public/images/social3.svg";
 import Footer from "@/components/Footer";
+import Carousel from "@/components/Carousel";
+import CarouselDesktop from "@/components/CarouselDesktop";
 
 export default function MobilePage() {
-  const [menuEmblaRef, menuEmblaApi] = useEmblaCarousel({ loop: true });
-  const [socialEmblaRef, socialEmblaApi] = useEmblaCarousel({ loop: true });
-
-  const scrollMenuPrev = useCallback(() => {
-    if (menuEmblaApi) menuEmblaApi.scrollPrev();
-  }, [menuEmblaApi]);
-
-  const scrollMenuNext = useCallback(() => {
-    if (menuEmblaApi) menuEmblaApi.scrollNext();
-  }, [menuEmblaApi]);
-
-  const scrollSocialPrev = useCallback(() => {
-    if (socialEmblaApi) socialEmblaApi.scrollPrev();
-  }, [socialEmblaApi]);
-
-  const scrollSocialNext = useCallback(() => {
-    if (socialEmblaApi) socialEmblaApi.scrollNext();
-  }, [socialEmblaApi]);
-
   return (
     <>
       <Header />
@@ -161,52 +140,10 @@ export default function MobilePage() {
           </div>
 
           <div className="w-full flex flex-col gap-10 transition-all ease-in lg:px-12">
-            <div className="relative">
-              <div className="overflow-hidden" ref={menuEmblaRef}>
-                <div className="flex lg:justify-between lg:gap-8">
-                  <div className="flex-[0_0_100%] lg:flex-[0_0_30%] min-w-0">
-                    <Image
-                      src={menu1}
-                      width={550}
-                      height={8}
-                      alt="Palha Italiana"
-                      className="w-full h-auto transition-transform duration-200 hover:scale-110 rounded-sm"
-                    />
-                  </div>
-                  <div className="flex-[0_0_100%] lg:flex-[0_0_30%] min-w-0">
-                    <Image
-                      src={menu2}
-                      width={550}
-                      height={8}
-                      alt="Palha Italiana"
-                      className="w-full h-auto transition-transform duration-200 hover:scale-110 rounded-sm"
-                    />
-                  </div>
-                  <div className="flex-[0_0_100%] lg:flex-[0_0_30%] min-w-0">
-                    <Image
-                      src={menu3}
-                      width={550}
-                      height={8}
-                      alt="Palha Italiana"
-                      className="w-full h-auto transition-transform duration-200 hover:scale-110 rounded-sm"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <button
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-[#521B11] text-white w-10 h-10 rounded-full flex items-center justify-center z-10 cursor-pointer"
-                onClick={scrollMenuPrev}
-              >
-                ←
-              </button>
-              <button
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#521B11] text-white w-10 h-10 rounded-full flex items-center justify-center z-10 cursor-pointer"
-                onClick={scrollMenuNext}
-              >
-                →
-              </button>
-            </div>
+            <Carousel 
+              images={[menu1, menu2, menu3]}
+              alt="Palha Italiana"
+            />
             <p className="text-[0.98rem] lg:text-[2rem] text-center lg:text-left text-justify">
               The combination of Brigadeiro (the real Brazilian cholocate fudge)
               combined with tea biscuits that gives the crispy sensation,
@@ -214,7 +151,7 @@ export default function MobilePage() {
             </p>
 
             <button
-              className="lg:hidden w-[45%] max-w-[25%] mx-auto lg:w-[8rem] lg:h-[3rem] bg-[#8E2A1B] text-white py-2 text-2xl font-bold uppercase tracking-wide cursor-pointer 
+              className="lg:hidden w-[45%] max-w-[55%] mx-auto lg:w-[8rem] lg:h-[3rem] bg-[#8E2A1B] text-white py-2 text-2xl font-bold uppercase tracking-wide cursor-pointer 
               rounded-sm"
               style={{ fontFamily: "Bemirs, sans-serif" }}
             >
@@ -228,63 +165,26 @@ export default function MobilePage() {
           <div className="relative">
             <span
               className="w-full py-7 block bg-[#8E2A1B] text-center text-5xl text-[#FFF2D8]
-             uppercase "
+             uppercase"
             >
               social media
             </span>
-            <div className="overflow-hidden" ref={socialEmblaRef}>
-              <div className="flex">
-                <div className="flex-[0_0_100%] min-w-0">
-                  <Image
-                    src={social}
-                    width={550}
-                    height={8}
-                    alt="Palha Italiana"
-                    className="w-full h-auto transition-transform duration-200 hover:scale-110 rounded-sm"
-                  />
-                </div>
-                <div className="flex-[0_0_100%] min-w-0">
-                  <Image
-                    src={social2}
-                    width={550}
-                    height={8}
-                    alt="Palha Italiana"
-                    className="w-full h-auto transition-transform duration-200 hover:scale-110 rounded-sm"
-                  />
-                </div>
-                <div className="flex-[0_0_100%] min-w-0">
-                  <Image
-                    src={social3}
-                    width={550}
-                    height={8}
-                    alt="Palha Italiana"
-                    className="w-full h-auto transition-transform duration-200 hover:scale-110 rounded-sm"
-                  />
-                </div>
-              </div>
-            </div>
 
-            <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-[#521B11] text-white w-10 h-10 rounded-full flex items-center justify-center"
-              onClick={scrollSocialPrev}
-            >
-              ←
-            </button>
-            <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#521B11] text-white w-10 h-10 rounded-full flex items-center justify-center"
-              onClick={scrollSocialNext}
-            >
-              →
-            </button>
+            <Carousel 
+              images={[social, social2, social3]}
+              alt="Palha Italiana"
+            />
+
           </div>
-          <a
-            className="w-[45%] max-w-[25%] mx-auto lg:w-[8rem] lg:h-[3rem] bg-[#8E2A1B] text-white text-center py-2 text-2xl font-bold uppercase tracking-widest cursor-pointer 
+            <a
+              className="w-[55%] mx-auto lg:w-[8rem] lg:h-[3rem] bg-[#8E2A1B] text-white text-center py-2 px-4 text-2xl font-bold uppercase tracking-widest cursor-pointer 
               rounded-sm"
-            style={{ fontFamily: "Bemirs, sans-serif" }}
-            href="https://www.instagram.com/grace.cocoa/" target="_blank"
-          >
-            follow us
-          </a>
+              style={{ fontFamily: "Bemirs, sans-serif" }}
+              href="https://www.instagram.com/grace.cocoa/"
+              target="_blank"
+            >
+              follow us
+            </a>
         </section>
 
         {/* carrosel social media desktop */}
@@ -320,53 +220,11 @@ export default function MobilePage() {
           </div>
 
           {/* Coluna Direita */}
-          <div className="hidden lg:flex flex-1 items-center justify-end relative overflow-hidden ">
-            <div className="flex transition-transform duration-500 ease-in-out w-full">
-              <div className="overflow-hidden" ref={socialEmblaRef}>
-                <div className="flex">
-                  <div className="flex-[0_0_100%] min-w-0">
-                    <Image
-                      src={social}
-                      width={550}
-                      height={8}
-                      alt="Palha Italiana"
-                      className="w-full h-auto transition-transform duration-200 hover:scale-110 rounded-sm"
-                    />
-                  </div>
-                  <div className="flex-[0_0_100%] min-w-0">
-                    <Image
-                      src={social2}
-                      width={550}
-                      height={8}
-                      alt="Palha Italiana"
-                      className="w-full h-auto transition-transform duration-200 hover:scale-110 rounded-sm"
-                    />
-                  </div>
-                  <div className="flex-[0_0_100%] min-w-0">
-                    <Image
-                      src={social3}
-                      width={550}
-                      height={8}
-                      alt="Palha Italiana"
-                      className="w-full h-auto transition-transform duration-200 hover:scale-110 rounded-sm"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-[#521B11] text-white w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
-              onClick={scrollSocialPrev}
-            >
-              ←
-            </button>
-            <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#521B11] text-white w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
-              onClick={scrollSocialNext}
-            >
-              →
-            </button>
+          <div className="hidden lg:flex flex-1 items-center justify-end relative overflow-hidden">
+            <CarouselDesktop 
+              images={[social, social2, social3]}
+              alt="Palha Italiana"
+            />
           </div>
         </section>
       </main>
