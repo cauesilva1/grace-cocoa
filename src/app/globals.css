@@ -23,10 +23,20 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Oculta scrollbars mas mantém o scroll funcional */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
 body {
   width: 100vw;
   height: 100vh;
-  background: var(--background);
+  background: #FFF2D8;
   color: var(--foreground);
   overflow-x: hidden;
 }
@@ -38,6 +48,3 @@ h1 , h2, h3{
 p, span, a{ 
   font-family: 'Gilroy', sans-serif; 
 }
-
-
-

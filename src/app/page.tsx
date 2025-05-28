@@ -18,9 +18,8 @@ import CarouselDesktop from "@/components/CarouselDesktop";
 export default function MobilePage() {
   return (
     <>
-      <Header />
       <main className="max-w-[90%] lg:max-w-[80%] mb-6 lg:pb-28 flex flex-col">
-        <section className="w-full lg:h-full mt-36 lg:mt-[10vw] flex flex-col items-center">
+        <section className="w-full lg:h-full mt-36 lg:mt-[10vw] flex flex-col items-center ">
           <div className="w-full relative">
             <h1
               className="text-[26vw] md:text-[25vw] lg:text-[18.45vw] text-center text-[#8E2A1B] lg:tracking-[2.8rem] leading-none"
@@ -228,7 +227,6 @@ export default function MobilePage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

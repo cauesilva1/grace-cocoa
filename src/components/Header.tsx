@@ -1,6 +1,9 @@
+"use client"
+
 import Image from "next/image";
 import React, { useState } from "react";
 import logo from "../../public/graceecocoa.png";
+import Link from 'next/link'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,13 +27,13 @@ const Header = () => {
       </nav>
 
       {/* Botão de compra */}
-      <button
+      <Link href="/menu"
         className="hidden md:block px-4 py-2 bg-[#521B11] text-white font-bold  lg:text-[1.6rem] border border-[#FFF2D8] uppercase tracking-widest cursor-pointer rounded-sm
         hover:border hover:border-[#521B11] hover:text-[#521B11] hover:bg-[#FFF2D8] transition-colors duration-300 ease-in"
         style={{ fontFamily: "Gilroy, sans-serif" }}
       >
         Buy Now
-      </button>
+      </Link>
 
       {/* Botão hambúrguer para mobile */}
       <button
