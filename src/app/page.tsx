@@ -227,6 +227,8 @@ export default function MobilePage() {
           </div>
         </section>
       </main>
+
+      <Footer />
     </>
   );
 }

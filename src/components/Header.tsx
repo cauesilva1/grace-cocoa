@@ -21,9 +21,13 @@ const Header = () => {
         <a className="text-[#8E2A1B] font-bold text-[1.5rem] lg:text-[1.6rem]" href="#about">
           About Us
         </a>
-        <a className="text-[#8E2A1B] font-bold text-[1.5rem]  lg:text-[1.6rem] " href="#menu">
+        <Link href="/menu" className="text-[#8E2A1B] font-bold text-[1.5rem]  lg:text-[1.6rem] ">
           Menu
-        </a>
+        </Link>
+
+        <Link href="/cart" className="text-[#8E2A1B] font-bold text-[1.5rem]  lg:text-[1.6rem] ">
+        Cart
+        </Link>
       </nav>
 
       {/* Botão de compra */}
@@ -51,22 +55,28 @@ const Header = () => {
         <nav className="absolute top-full left-0 w-full bg-[#FFF2D8] p-4 shadow-md md:hidden">
           <ul className="flex flex-col gap-4">
             <li>
-              <a 
+              <Link href="/"
                 className="text-[#8E2A1B] font-bold text-[1.8rem] block uppercase " 
-                href="#about"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a 
+              <Link href="/menu"
                 className="text-[#8E2A1B] font-bold text-[1.8rem] block uppercase" 
-                href="#menu"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Menu
-              </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/cart"
+                className="text-[#8E2A1B] font-bold text-[1.8rem] block uppercase" 
+                onClick={() => setIsMenuOpen(false)}
+              >
+                cart
+              </Link>
             </li>
             <li>
               <button
